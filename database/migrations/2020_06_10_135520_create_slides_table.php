@@ -17,7 +17,7 @@ class CreateSlidesTable extends Migration
             $table->increments('id');
             $table->string('s_name');
             $table->string('s_avatar');
-            $table->string('s_url');
+            //$table->string('s_url');
             $table->timestamps();
         });
     }

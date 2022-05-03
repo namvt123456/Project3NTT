@@ -31,6 +31,7 @@ class RegisterController extends CustomerController
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->role ='0';
         if($request->password != $request->confirmpassword)
         {
             return redirect()->back()->with('errorconfirmpassword','có lỗi');
