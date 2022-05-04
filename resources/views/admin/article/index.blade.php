@@ -80,6 +80,11 @@
         </div>
         <!-- /.card-body -->
       </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.article.create')}}" class="nav-link {{(request()->is('admin/article/create'))?"active":""}}">Thêm</a>
+            </div>
+        </div>
       <!-- /.card -->
 
     </section>

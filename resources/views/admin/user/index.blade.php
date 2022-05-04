@@ -65,9 +65,9 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
-                                    <td style="text-align: center"><a
+                                    <td style="text-align: center"><b
                                             href="{{ route('admin.user.action', ['role', $user->id]) }}"><span
-                                                class="badge badge-{{ $user->role == 1 ? 'success' : 'secondary' }}">{{ $user->role == 1 ? 'Admin' : 'Khách hàng' }}</span></a>
+                                                class="badge badge-{{ $user->role == 1 ? 'success' : 'secondary' }}">{{ $user->role == 1 ? 'Admin' : 'Khách hàng' }}</span></b>
                                     </td>
                                     <td style="width: 16%">
                                         <a href="{{ route('admin.user.edit', $user->id) }}"
@@ -121,6 +121,11 @@
                 </div>
                 <!-- /.card-body -->
             </div>
+            <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.user.create')}}" class="nav-link {{(request()->is('admin/user/create'))?"active":""}}">Thêm</a>
+            </div>
+        </div>
             <!-- /.card -->
 
         </section>

@@ -86,6 +86,11 @@
         <!-- /.card-body -->
         @endif
       </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.attribute.create')}}" class="nav-link {{(request()->is('admin/attribute/create'))?"active":""}}">Thêm</a>
+            </div>
+        </div>
       <!-- /.card -->
 
     </section>
