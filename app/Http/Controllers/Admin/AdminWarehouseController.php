@@ -13,8 +13,10 @@ class AdminWarehouseController extends Controller
     public function import()
     {
         $products = Product::all();
+        $warehouse = WareHouse::with('Product')->get();
         $data = [
-            'products' => $products
+            'products' => $products,
+            'warehouse' => $warehouse
         ];
         return view('admin.warehouse.import',$data);
     }
@@ -32,6 +34,7 @@ class AdminWarehouseController extends Controller
             [
                 'wh_product_id' => $id,
                 'wh_number_import' => $request->product_number,
+                'a_name' => $request->warehouse_name,
                 'time_import' => Carbon::now()
             ]
         );

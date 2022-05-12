@@ -198,17 +198,6 @@
             </a>
           </li>
 
-          {{-- Tab Slide --}}
-          <li class="nav-item has-treeview {{(request()->is('admin/slide*'))?"menu-open":""}}">
-            <a href="{{Route('admin.slide.index')}}" class="nav-link {{(request()->is('admin/slide*'))?"active":""}}">
-            <i class="nav-icon fa fa-window-maximize"></i>
-            {{-- <i class=""></i> --}}
-            <p>
-              Slide
-            </p>
-          </a>
-        </li>
-        {{--Entab Slide--}}
           {{-- Tab category --}}
           <li class="nav-item has-treeview {{(request()->is('admin/category*'))?"menu-open":""}}">
               <a href="{{Route('admin.category.index')}}" class="nav-link {{(request()->is('admin/category*'))?"active":""}}">
@@ -248,6 +237,7 @@
           <p>
             Kho hàng
           </p>
+          <i class="fas fa-angle-left right"></i>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">

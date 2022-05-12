@@ -6,7 +6,7 @@
 <div class="form-group">
   <label>Ảnh mô tả: </label>
   @if(isset($slide->s_avatar))
-      <img  id="img_output" class="form-control" style="width:480px;height:360px; margin-bottom:10px" src="{{asset('upload/s_image/'.$slide->s_avatar)}}"/>
+      <img  id="img_output" class="form-control" style="width:480px;height:360px; margin-bottom:10px" src="{{asset('public/upload/s_image/'.$slide->s_avatar)}}"/>
   @else
       <img id="img_output" class="form-control" style="width:480px;height:360px; margin-bottom:10px" src="{{asset('noimg.png')}}"/>
   @endif

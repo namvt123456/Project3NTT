@@ -53,6 +53,7 @@
                     <th>Loại sản phẩm</th>
                     <th>Ảnh</th>
                     <th>Số lượng</th>
+                    <th>Nhà kho</th>
                     <th style="width: 10%;">Thao tác</th>
                 </thead>
                 <tbody>
@@ -66,12 +67,19 @@
                         <td>{{$pro->Category->c_name}}</td>
                         <td>
                           @if($pro->pro_image)
-                            <img style="width:80px;height:80px" src="{{asset('upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
+                            <img style="width:80px;height:80px" src="{{asset('public/upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
                           @else
                           <img style="width:80px;height:80px" src="{{asset('noimg.png')}}" alt="No Avatar"/>
                           @endif
                         </td>
                         <td style="text-align: center">{{$pro->pro_number}}</td>
+                        <td> 
+                        @foreach($warehouse as $wa)
+                        
+                            <li> {{$wa->a_name}} </li>
+                      
+                        @endforeach
+                        </td>
                         <td style="text-align: center">
                           <a href="{{route('admin.warehouse.import.product',$pro->id)}}" data-name="{{$pro->pro_name}}" class="btn_import_product btn btn-success btn-circle"><i class="fa fa-plus-circle"></i></a>
                         </td>
@@ -104,7 +112,10 @@
                     Số lượng
                     <input type="number" name="product_number" class="form-control"/>
                 </div>
-            </form>
+                <div class="form-group">
+                    Tên kho
+                    <input type="text" name="warehouse_name" class="form-control"/>
+                </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>

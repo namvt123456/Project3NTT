@@ -73,7 +73,7 @@
                     <div class="product-details-images slider-navigation-1">
                         <div class="lg-image">
                             @if(isset($product->pro_image))
-                                <img src="{{asset('upload/pro_image/'.$product->pro_image)}}" alt="Li's Product Image">
+                                <img src="{{asset('public/upload/pro_image/'.$product->pro_image)}}" alt="Li's Product Image">
                             @else
                                 <img src="{{asset('noimg.png')}}" alt="Li's Product Image">
                             @endif

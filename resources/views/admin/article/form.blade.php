@@ -10,7 +10,7 @@
 <div class="form-group">
     <label>Ảnh mô tả: </label>
     @if(isset($article->a_image))
-        <img  id="img_output" class="form-control" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('upload/a_image/'.$article->a_image)}}"/>
+        <img  id="img_output" class="form-control" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('public/upload/a_image/'.$article->a_image)}}"/>
     @else
         <img id="img_output" class="form-control" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('unimg.jpg')}}"/>
     @endif

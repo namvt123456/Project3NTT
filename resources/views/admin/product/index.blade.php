@@ -102,7 +102,7 @@
                         <td>{{$pro->Category->c_name}}</td>
                         <td>
                           @if($pro->pro_image)
-                            <img style="width:80px;height:80px" src="{{asset('upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
+                            <img style="width:80px;height:80px" src="{{asset('/public/upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
                           @else
                           <img style="width:80px;height:80px" src="{{asset('noimg.png')}}" alt="No Avatar"/>
                           @endif

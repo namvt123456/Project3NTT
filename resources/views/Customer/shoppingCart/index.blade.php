@@ -50,7 +50,7 @@
                                 <tr>
                                     <td class="li-product-remove"><a href="{{route('shopping.delete.product',$key)}}"><i class="fa fa-times"></i></a></td>
                                     @if($product->options->image)
-                                        <td class="li-product-thumbnail" style="width: 16%"><a href="#"><img style="width: 100%; height: 150px;" src="{{asset('upload/pro_image/'.$product->options->image)}}" alt="Li's Product Image"></a></td>
+                                        <td class="li-product-thumbnail" style="width: 16%"><a href="#"><img style="width: 100%; height: 150px;" src="{{asset('public/upload/pro_image/'.$product->options->image)}}" alt="Li's Product Image"></a></td>
                                     @else
                                         <td class="li-product-thumbnail" style="width: 16%"><a href="#"><img style="width: 100%; height: 150px;" src="{{asset('noimg.png')}}" alt="Li's Product Image"></a></td>
                                     @endif

@@ -63,7 +63,7 @@
                           <td>{{$slide->s_name}}</td>
                           <td>
                             @if($slide->s_avatar)
-                              <img style="width:80px;height:80px" src="{{asset('public/upload/s_image/'.$slide->s_avatar)}}" alt="No Avatar"/>
+                              <img style="width:80px;height:80px" src="{{asset('public/public/upload/s_image/'.$slide->s_avatar)}}" alt="No Avatar"/>
                             @else
                               <img style="width:80px;height:80px" src="{{asset('noimg.png')}}" alt="No Avatar"/>
                             @endif

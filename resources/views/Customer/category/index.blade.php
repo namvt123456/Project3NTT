@@ -76,7 +76,7 @@
                                                 <div class="product-image">
                                                     <a href="{{route('product.index',[$product->pro_name_slug,$product->id])}}">
                                                         @if(isset($product->pro_image))
-                                                        <img src="{{asset('upload/pro_image/'.$product->pro_image)}}" alt="Li's Product Image">
+                                                        <img src="{{asset('public/upload/pro_image/'.$product->pro_image)}}" alt="Li's Product Image">
                                                         @else
                                                             <img src="{{asset('noimg.png')}}" alt="Li's Product Image">
                                                         @endif

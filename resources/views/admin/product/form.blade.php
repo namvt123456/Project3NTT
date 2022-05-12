@@ -37,7 +37,7 @@
     <div class="form-group">
       <label>Ảnh minh họa:</label>
       @if(isset($product->pro_image))
-          <img  id="img_output" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('upload/pro_image/'.$product->pro_image)}}"/>
+          <img  id="img_output" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('/public/upload/pro_image/'.$product->pro_image)}}"/>
       @else
           <img id="img_output" style="width:240px;height:180px; margin-bottom:10px" src="{{asset('unimg.jpg')}}"/>
       @endif
