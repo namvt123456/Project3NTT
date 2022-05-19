@@ -79,7 +79,7 @@
   ),
   'dejavusans' => array(
     'normal' => $fontDir . '/dejavusans-normal_c48d1304bfff1f0ef69de7cace9e061f',
-    'bold' => $fontDir . '/dejavusans-bold_c48d1304bfff1f0ef69de7cace9e061f',
+    'bold' => $fontDir . '/dejavusans-bold_047ff077394863ceb48766b87faaba5a',
     '600' => $fontDir . '/dejavusans-600_c48d1304bfff1f0ef69de7cace9e061f',
     '300' => $fontDir . '/dejavusans-300_c48d1304bfff1f0ef69de7cace9e061f',
   ),

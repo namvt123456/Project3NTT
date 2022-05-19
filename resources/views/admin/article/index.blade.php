@@ -64,7 +64,7 @@
                       <tr>
                           <td>{{$article->id}}</td>
                           <td style="width:15%">{{$article->a_name}}</td>
-                          <td><img style="width:80px;height:80px" src="{{asset('upload/a_image/'.$article->a_image)}}" alt="No Avatar"/></td>
+                          <td><img style="width:80px;height:80px" src="{{asset('public/upload/a_image/'.$article->a_image)}}" alt="No Avatar"/></td>
                           <td>{{$article->a_description}}</td>
                           <td style="width: 11%; text-align: center"><a href="{{route('admin.article.handle',['status',$article->id])}}" class="badge badge-{{($article->a_status==1)?"success":"danger"}}">{{($article->a_status==1)?"Công khai":"Riêng tư"}}</a></td>
                           <td style="width:11%">{{$article->created_at}}</td>
@@ -80,6 +80,11 @@
         </div>
         <!-- /.card-body -->
       </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.article.create')}}" class="nav-link {{(request()->is('admin/article/create'))?"active":""}}">Thêm</a>
+            </div>
+        </div>
       <!-- /.card -->
 
     </section>

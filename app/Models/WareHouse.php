@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class WareHouse extends Model
 {
-    protected $table ="warehouse";
+    protected $fillable = [
+        'wh_name',
+        'wh_adr'
+    ];
+
+    protected $table ="warehouse_stock";
     public function Product()
     {
-        return $this->belongsTo(Product::class,'wh_product_id');
+        return $this->belongsToMany(Product::class,'product_of_warehouses','warehouse_id','wh_product_id')->withPivot(['quantity']);
     }
 }

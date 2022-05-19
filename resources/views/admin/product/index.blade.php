@@ -102,7 +102,7 @@
                         <td>{{$pro->Category->c_name}}</td>
                         <td>
                           @if($pro->pro_image)
-                            <img style="width:80px;height:80px" src="{{asset('upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
+                            <img style="width:80px;height:80px" src="{{asset('/public/upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
                           @else
                           <img style="width:80px;height:80px" src="{{asset('noimg.png')}}" alt="No Avatar"/>
                           @endif
@@ -121,6 +121,11 @@
         </div>
         <!-- /.card-body -->
       </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.product.create')}}" class="nav-link {{(request()->is('admin/product/create'))?"active":""}}">Thêm</a>
+            </div>
+        </div>
       <!-- /.card -->
 
     </section>

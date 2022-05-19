@@ -35,7 +35,7 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td class="li-product-remove"><a href="{{route('get.delete.favorite.product',$product->id)}}" data-product-name="{{$product->pro_name}}" class="delete_favorite_product"><i class="fa fa-times"></i></a></td>
-                                        <td class="li-product-thumbnail"><a href="#"><img width="200px" src="{{asset('upload/pro_image/'.$product->pro_image)}}" alt=""></a></td>
+                                        <td class="li-product-thumbnail"><a href="#"><img width="200px" src="{{asset('public/upload/pro_image/'.$product->pro_image)}}" alt=""></a></td>
                                         <td class="li-product-name"><a href="#">{{$product->pro_name}}</a></td>
                                         <td class="li-product-price"><span class="amount">{{number_format($product->pro_price,2,',','.')}} VNĐ</span></td>
                                         <td class="li-product-stock-status">

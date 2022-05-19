@@ -15,7 +15,7 @@
                     <th scope="col">#{{$i++}}</th>
                     <td><a href="{{route('product.index',[$order->Product->pro_name_slug,$order->Product->id])}}">{{$order->Product->pro_name}}</a></td>
                     @if($order->Product->pro_image)
-                        <td><img style="width:80px;height:60px" src="{{asset('upload/pro_image/'.$order->Product->pro_image)}}"/></td>     
+                        <td><img style="width:80px;height:60px" src="{{asset('public/upload/pro_image/'.$order->Product->pro_image)}}"/></td>     
                     @else
                         <td><img style="width:80px;height:60px" src="{{asset('noimg.png')}}"/></td>
                     @endif
