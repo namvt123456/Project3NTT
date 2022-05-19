@@ -83,7 +83,11 @@ Route::group(['namespace'=>'Admin','prefix'=>'/admin','middleware'=>'checkAdminL
     Route::group(['prefix'=>'warehouse'],function(){
         Route::get('/','AdminWarehouseController@import')->name('admin.warehouse.import');
         Route::get('/import/{id}','AdminWarehouseController@importProduct')->name('admin.warehouse.import.product');
+        Route::get('/importWhProduct','AdminWarehouseController@importWhPro')->name('admin.warehouse.import.WhPro');
         Route::get('/history','AdminWarehouseController@history')->name('admin.warehouse.history');
+        Route::get('/stock','AdminWarehouseController@stock')->name('admin.warehouse.stock');
+        Route::get('/create','AdminWarehouseController@create')->name('admin.warehouse.create');
+        Route::post('/create','AdminWarehouseController@store')->name('admin.warehouse.store');
         Route::get('/iventory','AdminWarehouseController@iventory')->name('admin.warehouse.iventory');
         Route::get('/bestseller','AdminWarehouseController@bestSeller')->name('admin.warehouse.bestseller');
         Route::get('/hotproduct/{id}','AdminWarehouseController@hotProduct')->name('admin.warehouse.hotproduct');

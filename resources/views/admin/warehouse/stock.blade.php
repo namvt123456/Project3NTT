@@ -12,12 +12,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Kho hàng - Nhập hàng</h1>
+            <h1>Kho hàng</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Kho hàng - Nhập hàng</li>
+              <li class="breadcrumb-item active">Kho hàng </li>
             </ol>
           </div>
         </div>
@@ -30,58 +30,42 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-body">
-          @if(Session::has('import_success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <strong>Thành công !</strong> {{Session::get('import_success')}}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          @endif
-          @if(Session::has('import_error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong>Thất bại !</strong> {{Session::get('import_error')}}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          @endif
             <table class="table table-hover table-striped" id="dataTable">
                 <thead class="thead-dark">
                     <th>ID</th>
-                    <th style="width:36%">Tên sản phẩm</th>
-                    <th>Loại sản phẩm</th>
-                    <th>Ảnh</th>
-                    <th>Số lượng</th>
-                    <th style="width: 10%;">Thao tác</th>
+                    <th>Nhà kho</th>
+                    <th style="width:28%">Tên sản phẩm</th>
+                    <th>Số lượng hàng</th>
                 </thead>
                 <tbody>
-                  @if(isset($products))
-                    @foreach($products as $pro)
+                    @foreach($warehouses as $pro)
                       <tr>
                         <td>{{$pro->id}}</td>
+                        <td> {{$pro->wh_name}}</td>
                         <td>
-                          <b>{{$pro->pro_name}}</b><br/>
+                          @foreach($pro->Product as $prod)
+                            <ul>{{isset($prod->pro_name)?$prod->pro_name:"Đã bị xóa"}}</ul>
+                          @endforeach
                         </td>
-                        <td>{{$pro->Category->c_name}}</td>
-                        <td>
-                          @if($pro->pro_image)
-                            <img style="width:80px;height:80px" src="{{asset('public/upload/pro_image/'.$pro->pro_image)}}" alt="No Avatar"/>
-                          @else
-                          <img style="width:80px;height:80px" src="{{asset('noimg.png')}}" alt="No Avatar"/>
-                          @endif
+                        <td style="text-align: left">
+                          @foreach($pro->Product as $prod)
+                            <ul>{{$prod->pivot->quantity}} sản phẩm</ul>
+                          @endforeach
                         </td>
-                        <td style="text-align: center">{{$pro->pro_number}}</td>
-                        <td style="text-align: center">
-                          <a href="{{route('admin.warehouse.import.product',$pro->id)}}" data-name="{{$pro->pro_name}}" class="btn_import_product btn btn-success btn-circle"><i class="fa fa-plus-circle"></i></a>
-                        </td>
+                       @endforeach
                       </tr>
-                    @endforeach
-                  @endif
                 </tbody>
             </table>
         </div>
         <!-- /.card-body -->
+        </div>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <a class="btn btn-danger" href="{{route('admin.warehouse.create')}}" class="nav-link {{(request()->is('admin/warehouse/create'))?"active":""}}">Thêm kho</a>
+            </div>&nbsp&nbsp&nbsp&nbsp&nbsp
+            <div class="btn-group me-2">
+                <a class="btn_import_product btn btn-success" href="{{route('admin.warehouse.import.WhPro')}}">Thêm hàng</a>
+            </div>
       </div>
       <!-- /.card -->
     </section>
@@ -93,17 +77,20 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Nhập sản phẩm " <span class="name_product_import"></span> "</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <form action="#" class="form_import_product">
-                <div class="form-group">
-                    Số lượng
-                    <input type="number" name="product_number" class="form-control"/>
-                </div>
+            <div class="form-group">
+                            <label>product</label>
+                            <select id="product" name="product_id" class="form-control select2">
+                                @foreach($products as $product)
+                                <option value="{{$product->id}}">{{$product->pro_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                 <div class="form-group">
                             <label>Warehouse</label>
                             <select id="warehouse" name="warehouse_id" class="form-control select2">

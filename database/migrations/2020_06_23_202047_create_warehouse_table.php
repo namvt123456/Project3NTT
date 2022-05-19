@@ -17,7 +17,7 @@ class CreateWarehouseTable extends Migration
             $table->bigIncrements('id');
             $table->integer('wh_product_id')->unsigned()->nullable()->length(10);
             $table->integer('wh_number_import');
-            $table->string('a_name');
+            $table->string('wh_name');
             $table->timestamp('time_import');
             $table->foreign('wh_product_id')->references('id')->on('products')->onDelete('set null');
         });

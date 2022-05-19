@@ -249,6 +249,14 @@
           </ul>
           <ul class="nav nav-treeview">
             <li class="nav-item">
+            <a href="{{Route('admin.warehouse.stock')}}" style="margin-left: 15%;padding-left: 0px;" class="nav-link {{(request()->is('admin/warehouse/stock'))?"active":""}}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Nhà kho</p>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
               <a href="{{route('admin.warehouse.history')}}" style="margin-left: 15%;padding-left: 0px;" class="nav-link {{(request()->is('admin/warehouse/history'))?"active":""}}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Lịch sử nhập hàng</p>
